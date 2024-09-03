@@ -23,40 +23,51 @@
 <body>
     <div class="container">
         <h1>Illion Calculator</h1>
-        <label for="number">Number:</label>
-        <input type="number" id="number" placeholder="Enter a number">
+        <label for="illionNumber">Illion Number:</label>
+        <input type="number" id="illionNumber" placeholder="Enter the illion number" min="1" step="1">
         <button onclick="calculateIllion()">Calculate</button>
         <div class="result" id="result"></div>
     </div>
 
     <script>
         function calculateIllion() {
-            const num = parseInt(document.getElementById('number').value);
+            const illionNumber = parseInt(document.getElementById('illionNumber').value);
             let result = '';
 
-            if (num >= 10**6 && num < 10**9) {
-                result = num / 10**6 + ' m illion';
-            } else if (num >= 10**9 && num < 10**12) {
-                result = num / 10**9 + ' b illion';
-            } else if (num >= 10**12 && num < 10**15) {
-                result = num / 10**12 + ' tr illion';
-            } else if (num >= 10**15 && num < 10**18) {
-                result = num / 10**15 + ' quadr illion';
-            } else if (num >= 10**18 && num < 10**21) {
-                result = num / 10**18 + ' quint illion';
-            } else if (num >= 10**21 && num < 10**24) {
-                result = num / 10**21 + ' sext illion';
-            } else if (num >= 10**24 && num < 10**27) {
-                result = num / 10**24 + ' sept illion';
-            } else if (num >= 10**27 && num < 10**30) {
-                result = num / 10**27 + ' oct illion';
-            } else if (num >= 10**30) {
-                result = num / 10**30 + ' non illion';
-            } else {
-                result = 'Number is less than 1 million';
+            switch (illionNumber) {
+                case 1:
+                    result = 'Million';
+                    break;
+                case 2:
+                    result = 'Billion';
+                    break;
+                case 3:
+                    result = 'Trillion';
+                    break;
+                case 4:
+                    result = 'Quadrillion';
+                    break;
+                case 5:
+                    result = 'Quintillion';
+                    break;
+                case 6:
+                    result = 'Sextillion';
+                    break;
+                case 7:
+                    result = 'Septillion';
+                    break;
+                case 8:
+                    result = 'Octillion';
+                    break;
+                case 9:
+                    result = 'Nonillion';
+                    break;
+                default:
+                    result = 'Number exceeds the range of supported illions';
+                    break;
             }
 
-            document.getElementById('result').textContent = result;
+            document.getElementById('result').textContent = result + ' illion';
         }
     </script>
 </body>
