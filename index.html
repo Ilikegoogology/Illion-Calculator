@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illion Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        .result {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Illion Calculator</h1>
+        <label for="number">Number:</label>
+        <input type="number" id="number" placeholder="Enter a number">
+        <button onclick="calculateIllion()">Calculate</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateIllion() {
+            const num = parseInt(document.getElementById('number').value);
+            let result = '';
+
+            if (num >= 10**6 && num < 10**9) {
+                result = num / 10**6 + ' m illion';
+            } else if (num >= 10**9 && num < 10**12) {
+                result = num / 10**9 + ' b illion';
+            } else if (num >= 10**12 && num < 10**15) {
+                result = num / 10**12 + ' tr illion';
+            } else if (num >= 10**15 && num < 10**18) {
+                result = num / 10**15 + ' quadr illion';
+            } else if (num >= 10**18 && num < 10**21) {
+                result = num / 10**18 + ' quint illion';
+            } else if (num >= 10**21 && num < 10**24) {
+                result = num / 10**21 + ' sext illion';
+            } else if (num >= 10**24 && num < 10**27) {
+                result = num / 10**24 + ' sept illion';
+            } else if (num >= 10**27 && num < 10**30) {
+                result = num / 10**27 + ' oct illion';
+            } else if (num >= 10**30) {
+                result = num / 10**30 + ' non illion';
+            } else {
+                result = 'Number is less than 1 million';
+            }
+
+            document.getElementById('result').textContent = result;
+        }
+    </script>
+</body>
+</html>
